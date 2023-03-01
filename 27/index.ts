@@ -13,7 +13,7 @@ const userData = '{"isBirthdayData": true, "ageData": 30, "userNameData": "John"
 const arr = ['ssss', 5, true];
 
 const userObj: UserData = JSON.parse(userData);
-console.log(userObj.smt);
+console.log(userObj.ageData);
 
 
 let isOkay = true;
