@@ -21,10 +21,17 @@ function createSlider({
 
 createSlider();
 
+// исключаем свойства, оставшиеся делаем обязательными
+type CustomSliderBase = Required<Omit<ISlider, 'animationName' | 'speed'>>;
+interface ICustomSlider extends CustomSliderBase {
+	speed: number;
+}
+
+
 // Необходимо типизировать объект настроек, который будет зависим
 // от интерфейса ISlider
 // Все поля в нем обязательны для заполнения
-const customSliderOptions = {
+const customSliderOptions: ICustomSlider = {
 	container: "id",
 	numberOfSlides: 4,
 	speed: 1100,
@@ -33,7 +40,7 @@ const customSliderOptions = {
 	arrows: true,
 };
 
-function createCustomSlider(options: any): void {
+function createCustomSlider(options: ICustomSlider): void {
 	if ("container" in options) {
 		console.log(options);
 	}
