@@ -51,7 +51,3 @@ function changeAmountOfFuel(amount: number) {
 
 const car = new myCar();
 console.log(car.isOpen());		// модифицируем объект и выполняем на нем метод
-
-
-
-
